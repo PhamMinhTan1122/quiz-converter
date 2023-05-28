@@ -35,7 +35,7 @@ To use Quiz Converter, you need to have a docx file that contains the quiz quest
 
 ![alt text](https://raw.githubusercontent.com/PhamMinhTan1122/quizizz-convert/main/public/imgs/data-raw.png "Data-raw")
 
-or the correct option can be table (**Don't have before table!!!**). For example:
+or the correct option can be table (**Don't have text before table!!!**). For example:
 
 ![alt text](https://raw.githubusercontent.com/PhamMinhTan1122/quiz-converter/main/public/imgs/answer-table.png "Answer-table")
 
