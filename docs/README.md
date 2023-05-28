@@ -51,6 +51,18 @@ or
 python main.py -docx <your file docx (Word)> -xlsx <your file xlsx (File SpreadSheets of Quizziz)>
 ```
 
+If you have an answer table in a docx file, you should follow these steps:
+
+```bash
+python main.py -d <your file docx (Word)> -x <your file xlsx (File SpreadSheets of Quizziz)> --answer-table
+```
+
+If you do not have an answer table, you can use the following command to underline the correct answers in the xlsx file:
+
+```bash
+python main.py -d <your file docx (Word)> -x <your file xlsx (File SpreadSheets of Quizziz)> --no-answer-table
+```
+
 ### 🚨Noticed!
 
 You can download SpreadSheets file on Quizizz:
