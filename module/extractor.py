@@ -26,7 +26,7 @@ def extract_data(docx_filename, excel_file_name, answer_table: bool):
             values.append([cell.text for cell in row.cells])
         # Print the values of the table
         for row, items in enumerate(values):
-            ws[f"G{row + 3}"] = answer_index[items[1]]
+            ws[f"G{int(items[0]) + 2}"] = answer_index[items[1]]
     else:
         match = re.match(r"(^\d+).\s+(.*)$", text)
         if match:
