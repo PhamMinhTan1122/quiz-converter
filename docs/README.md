@@ -35,6 +35,10 @@ To use Quiz Converter, you need to have a docx file that contains the quiz quest
 
 ![alt text](https://raw.githubusercontent.com/PhamMinhTan1122/quizizz-convert/main/public/imgs/data-raw.png "Data-raw")
 
+or the correct option can be table (**Don't have before table!!!**). For example:
+
+![alt text](https://raw.githubusercontent.com/PhamMinhTan1122/quiz-converter/main/public/imgs/answer-table.png")
+
 Then, you need to run the main.py script from the scripts directory and provide the input and output filenames as arguments. For example:
 
 ```bash
