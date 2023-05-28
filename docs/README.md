@@ -2,7 +2,7 @@
 
 ## **Description**
 
-Quizzi Converter is a Python program that converts quiz questions from docx format to excel format. It can be used by teachers or students who want to create or take quizzes online using platforms like Quizizz.
+Quiz Converter is a Python program that converts quiz questions from docx format to excel format. It can be used by teachers or students who want to create or take quizzes online using platforms like Quizizz.
 
 ## **🎇Installation**
 
@@ -13,7 +13,7 @@ git clone https://github.com/PhamMinhTan1122/quizizz-convert.git
 ```
 
 
-To install and run Quizzi Converter, you need to have Python 3 and the following libraries installed on your system:
+To install and run Quiz Converter, you need to have Python 3 and the following libraries installed on your system:
 
 - openpyxl
 - python-docx
@@ -65,7 +65,7 @@ This will create an excel file that contains the quiz questions and their option
 After run and sucessful, You can then upload this excel file to Quizizz or any other online quiz platform that supports this format.
 
 ## License
-Quiz Converter is licensed under the MIT License. See LICENSE.txt for more details.
+Quiz Converter is licensed under the MIT License. See [LICENSE.txt](https://raw.githubusercontent.com/PhamMinhTan1122/quizizz-convert/main/docs/LICENSE.txt) for more details.
 
 ## Contributing
 Quiz Converter is an open source project and welcomes contributions from anyone. If you want to contribute to this project, please follow these steps:
