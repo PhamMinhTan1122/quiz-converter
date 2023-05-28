@@ -4,7 +4,7 @@
 
 Quizzi Converter is a Python program that converts quiz questions from docx format to excel format. It can be used by teachers or students who want to create or take quizzes online using platforms like Quizizz.
 
-## **Installation**
+## **🎇Installation**
 
 You also need to clone this repository or download the zip file:
 
@@ -16,15 +16,13 @@ git clone https://github.com/PhamMinhTan1122/quizizz-convert.git
 To install and run Quizzi Converter, you need to have Python 3 and the following libraries installed on your system:
 
 - openpyxl
-- docx
-- re
+- python-docx
 
 You can install these libraries using pip:
 
 ```bash
 pip install openpyxl
-pip install docx
-pip install re
+pip install python-docx
 ```
 or
 
@@ -32,7 +30,38 @@ or
 pip install -r requirements.txt
 ```
 
-## **Usage**
+## **🕹Usage**
 To use Quiz Converter, you need to have a docx file that contains the quiz questions and their options. The questions should be numbered and the correct option should be underlined. For example:
 
-![alt text](Isolated.png "Title")
+![alt text](https://raw.githubusercontent.com/PhamMinhTan1122/quizizz-convert/main/public/imgs/data-raw.png "Data-raw")
+
+Then, you need to run the main.py script from the scripts directory and provide the input and output filenames as arguments. For example:
+
+```bash
+python main.py -d <your file docx (Word)> -x <your file xlsx (File SpreadSheets of Quizziz)>
+```
+
+or
+
+```bash
+python main.py -docx <your file docx (Word)> -xlsx <your file xlsx (File SpreadSheets of Quizziz)>
+```
+
+### 🚨Noticed!
+
+```
+You can download SpreadSheets file on Quizizz:
+
+![alt text](https://raw.githubusercontent.com/PhamMinhTan1122/quizizz-convert/main/public/imgs/excel_after.png "SpreadSheets file")
+
+or
+
+You can own make file in excel or Google Sheets (if you use Google Sheets, you can download .xlsx format File -> Download -> Microsoft Excel (.xlsx)), For example:
+
+![alt text](https://raw.githubusercontent.com/PhamMinhTan1122/quizizz-convert/main/public/imgs/excel_before.png "Excel before")
+
+```
+
+This will create an excel file that contains the quiz questions and their options in separate columns. The correct option will also be marked in column G. For example:
+
+![alt text](https://raw.githubusercontent.com/PhamMinhTan1122/quizizz-convert/main/public/imgs/excel_after.png "Excel after")
