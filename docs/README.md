@@ -49,10 +49,9 @@ python main.py -docx <your file docx (Word)> -xlsx <your file xlsx (File SpreadS
 
 ### 🚨Noticed!
 
-```
 You can download SpreadSheets file on Quizizz:
 
-![alt text](https://raw.githubusercontent.com/PhamMinhTan1122/quizizz-convert/main/public/imgs/excel_after.png "SpreadSheets file")
+![alt text](https://raw.githubusercontent.com/PhamMinhTan1122/quizizz-convert/main/public/imgs/download-spreadsheets.png "SpreadSheets file")
 
 or
 
@@ -60,8 +59,26 @@ You can own make file in excel or Google Sheets (if you use Google Sheets, you c
 
 ![alt text](https://raw.githubusercontent.com/PhamMinhTan1122/quizizz-convert/main/public/imgs/excel_before.png "Excel before")
 
-```
-
 This will create an excel file that contains the quiz questions and their options in separate columns. The correct option will also be marked in column G. For example:
 
 ![alt text](https://raw.githubusercontent.com/PhamMinhTan1122/quizizz-convert/main/public/imgs/excel_after.png "Excel after")
+After run and sucessful, You can then upload this excel file to Quizizz or any other online quiz platform that supports this format.
+
+## License
+Quiz Converter is licensed under the MIT License. See LICENSE.txt for more details.
+
+## Contributing
+Quiz Converter is an open source project and welcomes contributions from anyone. If you want to contribute to this project, please follow these steps:
+
+- Fork this repository and clone it to your local machine.
+- Create a new branch for your feature or bug fix.
+- Make your changes and commit them with descriptive messages.
+- Push your branch to your forked repository and create a pull request.
+- Wait for your pull request to be reviewed and merged.
+- Please follow the PEP 8 style guide for Python code and write clear and concise comments.
+
+## Contact
+If you have any questions or feedback about Quiz Converter, please feel free to contact me at:
+
+- Email: masterminhtan@gmail.com
+- Twitter: @masterminhtan
