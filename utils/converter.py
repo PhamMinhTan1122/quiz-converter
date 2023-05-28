@@ -8,7 +8,7 @@ class QuizConverter:
 
     def convert(self):
         # Extract data from the docx file using extractor.py module 
-        self.data_list = extract_data(self.docx_filename, self.excel_filename)
+        self.data_list = extract_data(docx_filename=self.docx_filename,excel_file_name=self.excel_filename)
 
         # Write data to the excel file using writer.py module 
         write_to_excel(self.data_list, self.excel_filename)

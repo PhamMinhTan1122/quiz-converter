@@ -5,7 +5,7 @@ from utils import converter
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog="main.py")
     parser.add_argument("-d", "--docx", help="filename.docx path(s)")
-    parser.add_argument("-x","--xlsx", help="filename.xlsx path(s)")
+    parser.add_argument("-x","--xlsx", default="./QuizizzSampleSpreadsheetUpdated.xlsx", help="filename.xlsx path(s)")
     args = parser.parse_args()
     # Check input user
     if not args.docx or not args.xlsx:
