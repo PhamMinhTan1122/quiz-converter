@@ -2,23 +2,32 @@
 import docx
 import re
 import openpyxl
-def extract_data(docx_filename, excel_file_name):
+def extract_data(docx_filename, excel_file_name, answer_table: bool):
     # Create a document object from the docx file
     doc = docx.Document(docx_filename)
     wb = openpyxl.Workbook()
     wb = openpyxl.load_workbook(excel_file_name)
     ws = wb.active
-
     # Initialize an empty list to store the extracted data
     data = []
-
-    # List convert A B C D to number
-    answer_index = {"A": 1, "B": 2, "C": 3, "D": 4}
     # Loop through the paragraphs in the document and append their text to the list
     for para in doc.paragraphs:
         text = para.text.strip()
         data.append(text)
-
+    # List convert A B C D to number
+    answer_index = {"A": 1, "B": 2, "C": 3, "D": 4}
+    
+    if answer_table:
+        # print(answer_table)
+        table = doc.tables[0]
+        # print(table)
+        values = []
+        for row in table.rows:
+            values.append([cell.text for cell in row.cells])
+        # Print the values of the table
+        for row, items in enumerate(values):
+            ws[f"G{row + 3}"] = answer_index[items[1]]
+    else:
         match = re.match(r"(^\d+).\s+(.*)$", text)
         if match:
             row = int(match.group(1)) + 2

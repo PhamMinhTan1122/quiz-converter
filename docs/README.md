@@ -66,7 +66,7 @@ After run and sucessful, You can then upload this excel file to Quizizz or any o
 
 ## TODO
 - [X] ~~Get answer format underline~~
-- [ ] Get answer format table
+- [X] ~~Get answer format table~~
 
 ## License
 Quiz Converter is licensed under the MIT License. See [LICENSE.txt](https://raw.githubusercontent.com/PhamMinhTan1122/quizizz-convert/main/docs/LICENSE.txt) for more details.
