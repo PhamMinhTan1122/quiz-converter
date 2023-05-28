@@ -11,9 +11,7 @@ class QuizConverter:
         self.data_list = extract_data(docx_filename=self.docx_filename,excel_file_name=self.excel_filename)
 
         # Write data to the excel file using writer.py module 
-        write_to_excel(self.data_list, self.excel_filename)
-
-    def checkMissQuestion(self):
+        self.max_number = write_to_excel(self.data_list, self.excel_filename)
         # Check column G is empty and return that questions
-        check(self.excel_filename)
+        check(self.excel_filename, self.max_number)
         

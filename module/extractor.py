@@ -2,7 +2,6 @@
 import docx
 import re
 import openpyxl
-
 def extract_data(docx_filename, excel_file_name):
     # Create a document object from the docx file
     doc = docx.Document(docx_filename)
@@ -27,8 +26,6 @@ def extract_data(docx_filename, excel_file_name):
             if run.underline and r"[A-D]\. .*":
                 clean_data_ans = str(run.text).replace(".", "")
                 ws[f"G{row}"] = answer_index[clean_data_ans]
-
-
     # Join the list into a single string and assign it to the data variable
     data = "\n\n".join(data)
 

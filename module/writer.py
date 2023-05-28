@@ -28,7 +28,7 @@ def write_to_excel(data_list, excel_filename):
 
         else:
             print(f"Invalid data format at index {i}")
-
     # Save the workbook as an Excel file with the given filename
     wb.save(excel_filename)
     print("Saved successful")
+    return row

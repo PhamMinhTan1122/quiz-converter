@@ -18,5 +18,4 @@ if __name__ == "__main__":
     converter = converter.QuizConverter(docx_filename=args.docx, excel_filename=args.xlsx)
     # Call the convert method to extract data from the docx file and write it to the excel file
     converter.convert()
-    # Check miss question
-    converter.checkMissQuestion()
+  
