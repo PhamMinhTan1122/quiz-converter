@@ -65,7 +65,7 @@ This will create an excel file that contains the quiz questions and their option
 After run and sucessful, You can then upload this excel file to Quizizz or any other online quiz platform that supports this format.
 
 ## TODO
-- [X] Get answer format underline
+- [X] ~~Get answer format underline~~
 - [ ] Get answer format table
 
 ## License
