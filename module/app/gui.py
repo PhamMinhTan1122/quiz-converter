@@ -23,7 +23,7 @@ class QuizConverterGUI:
         self.link_red = tk.Label(self.master, text="Reddit", fg="blue", cursor="hand2")
         self.link_red.grid(row=6, column=0, sticky="nsew" )
         self.link_red.bind("<Button-1>", lambda e: self.open_browser(url="https://www.reddit.com/user/master_minh_tan"))
-        self.copyright = tk.Label(self.master, text="Power by Pham Minh Tan")
+        self.copyright = tk.Label(self.master, text="Power by Pham Minh Tan", font=("TkDefaultFont", 7))
         self.copyright.grid(row=7, column=0, sticky="nsew")
         # Create input widgets
         self.docx_label = tk.Label(self.input_frame, text="Select a docx file:")
