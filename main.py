@@ -1,4 +1,11 @@
-import tkinter as tk
+"""
+This code creates a Tkinter GUI for a quiz converter.
+
+The `app` function creates the GUI and starts the main loop.
+The `QuizConverterGUI` class provides the functionality for the GUI.
+"""
+
+from tkinter import Tk
 from module.app.gui import QuizConverterGUI
 
 try:
@@ -7,10 +14,23 @@ try:
     windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 except ImportError:
     pass
+
 def app():
-    root = tk.Tk()
+    """
+    Creates the GUI and starts the main loop.
+
+    Returns:
+        The `Tk` root window.
+    """
+
+    root = Tk()
     gui = QuizConverterGUI(root)
     root.mainloop()
-    return app
+    return root
+
 if __name__ == "__main__":
+    """
+    Starts the application.
+    """
+
     app()
