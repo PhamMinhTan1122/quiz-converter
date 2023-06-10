@@ -79,8 +79,9 @@ This will create an excel file that contains the quiz questions and their option
 
 ![alt text](https://raw.githubusercontent.com/PhamMinhTan1122/quizizz-convert/main/public/imgs/excel_after.png "Excel after")
 After run and sucessful, You can then upload this excel file to Quizizz or any other online quiz platform that supports this format.
-## Link try 
-[Quiz Converter](https://quiz-convert-website.vercel.app)
+# Use on Windows
+[Quiz Converter](https://github.com/PhamMinhTan1122/quiz-converter/releases)
+
 ## TODO
 - [X] ~~Get answer format underline~~
 - [X] ~~Get answer format table~~
@@ -92,7 +93,13 @@ Quiz Converter is licensed under the MIT License. See [LICENSE.txt](https://raw.
 Quiz Converter is an open source project and welcomes contributions from anyone. If you want to contribute to this project, please follow these steps:
 
 - Fork this repository and clone it to your local machine.
+```
+git clone https://github.com/PhamMinhTan1122/quiz-converter
+```
 - Create a new branch for your feature or bug fix.
+```
+git checkout -b <branch-name>
+```
 - Make your changes and commit them with descriptive messages.
 - Push your branch to your forked repository and create a pull request.
 - Wait for your pull request to be reviewed and merged.
