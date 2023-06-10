@@ -5,3 +5,10 @@ __pycache__/
 .vs/
 .vscode/
 build/
+*.cpp
+dist/
+*.spec
+logs/
+get_package.py
+*.txt
+setup.py

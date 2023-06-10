@@ -2,7 +2,7 @@
 import docx
 import re
 import openpyxl
-from tkinter import messagebox
+from module.logs import Logs
 
 def extract_data(docx_filename, excel_file_name, answer_table: bool):
     # Create a document object from the docx file
@@ -48,12 +48,14 @@ def extract_data(docx_filename, excel_file_name, answer_table: bool):
 
 def extra_options(data_list, index):
     string = ''
+    logs = []
     match = re.match(r"([A-D]\.) (.*)", data_list[index])
     if match:
         string = match.group(2)
     else:
         print("WRONG FORMAT: ", data_list[index])
-        messagebox.showerror(title='ERROR', message=str("WRONG FORMAT: ", data_list[index]))
+        # messagebox.showerror(title='ERROR', message=str("WRONG FORMAT: ", data_list[index]))
+        Logs().check_file(logs)
     return string
 def extra_questions(data_list, index):
     string = ''

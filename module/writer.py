@@ -2,7 +2,7 @@
 import openpyxl
 from module.extractor import extra_options
 from module.extractor import extra_questions
-from tkinter import messagebox
+
 
 def write_to_excel(data_list, excel_filename):
     # Create a workbook and a worksheet object
