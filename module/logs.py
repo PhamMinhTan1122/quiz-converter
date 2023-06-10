@@ -15,6 +15,7 @@ class Logs():
         with open(self.file_path, "w", encoding="utf-8") as f:
             f.write("\n".join(logs) + "\n")
     def write_new_line(self, logs):
+        Logs().check_folder()
         with open(self.file_path, "a", encoding="utf-8") as f:
             f.write("\n".join(logs) + "\n")
     def read(self):

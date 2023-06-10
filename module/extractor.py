@@ -61,7 +61,7 @@ def extra_options(data_list, index):
     return string
 def check_format_op():
     if len(logs) > 0:
-        print(logs)
+        Logs().check_file(logs=logs)
 def extra_questions(data_list, index):
     string = ''
     match = re.match(r"(^\d+).\s+(.*)$", data_list[index])
