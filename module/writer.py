@@ -2,6 +2,7 @@
 import openpyxl
 from module.extractor import extra_options
 from module.extractor import extra_questions
+from tkinter import messagebox
 
 def write_to_excel(data_list, excel_filename):
     # Create a workbook and a worksheet object
@@ -28,7 +29,9 @@ def write_to_excel(data_list, excel_filename):
 
         else:
             print(f"Invalid data format at index {i}")
+            # messagebox.showerror(title='ERROR', message=str(f"Invalid data format at index {i}"))
+
     # Save the workbook as an Excel file with the given filename
     wb.save(excel_filename)
-    print("Saved successful")
+    # print("Saved successful")
     return row
