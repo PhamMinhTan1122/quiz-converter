@@ -84,10 +84,21 @@ After run and sucessful, You can then upload this excel file to Quizizz or any o
 [Quiz Converter](https://github.com/PhamMinhTan1122/quiz-converter/releases)
 ## Shortcuts
 
-- [Select excel (.xlsx) files](# "Select excel files" {Ctrl+E})
-- [Select document (.docx) files](# "Select document files" {Ctrl+D})
-- [Reset](# "Reset" {Ctrl+R})
-- [Convert](# "Convert" {Enter})
+### Select Excel (.xlsx) files
+
+To select Excel (.xlsx) files, press `Ctrl`+`E`.
+
+### Select Document (.docx) files
+
+To select Document (.docx) files, press `Ctrl`+`D`.
+
+### Reset
+
+To reset the selection, press `Ctrl`+`R`.
+
+### Convert
+
+To convert the selected files, press `Enter`.
 
 ## TODO
 - [X] ~~Get answer format underline~~
