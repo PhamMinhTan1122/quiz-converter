@@ -9,7 +9,6 @@ class QuizConverter:
     def convert(self):
         # Extract data from the docx file using extractor.py module 
         self.data_list = extract_data(docx_filename=self.docx_filename,excel_file_name=self.excel_filename, answer_table=self.answer_table)
-
         # Write data to the excel file using writer.py module 
         self.max_number = write_to_excel(self.data_list, self.excel_filename)
         # Check column G is empty and return that questions

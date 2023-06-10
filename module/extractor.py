@@ -3,6 +3,7 @@ import docx
 import re
 import openpyxl
 from module.logs import Logs
+from tkinter import messagebox
 
 def extract_data(docx_filename, excel_file_name, answer_table: bool):
     # Create a document object from the docx file
@@ -18,45 +19,49 @@ def extract_data(docx_filename, excel_file_name, answer_table: bool):
         data.append(text)
     # List convert A B C D to number
     answer_index = {"A": 1, "B": 2, "C": 3, "D": 4}
-    
     if answer_table:
-        # print(answer_table)
         table = doc.tables[0]
-        # print(table)
         values = []
         for row in table.rows:
             values.append([cell.text for cell in row.cells])
-        # Print the values of the table
         for row, items in enumerate(values):
             ws[f"G{int(items[0]) + 2}"] = answer_index[items[1]]
+
     else:
-        match = re.match(r"(^\d+).\s+(.*)$", text)
-        if match:
-            row = int(match.group(1)) + 2
-        for run in para.runs:
-            if run.underline and r"[A-D]\. .*":
-                clean_data_ans = str(run.text).replace(".", "")
-                ws[f"G{row}"] = answer_index[clean_data_ans]
+        for para in doc.paragraphs:
+            text = para.text.strip()
+            match = re.match(r"(^\d+).\s+(.*)$", text)
+            if match:
+                row = int(match.group(1)) + 2
+            for run in para.runs:
+                if run.underline and r"[A-D]\. .*":
+                    clean_data_ans = str(run.text).replace(".", "")
+                    ws[f"G{row}"] = answer_index[clean_data_ans]
     # Join the list into a single string and assign it to the data variable
     data = "\n\n".join(data)
 
     # Split the data by double newline characters and assign it to the data_list variable
     data_list = data.split("\n\n")
-    wb.save(excel_file_name)
+    try:
+        wb.save(excel_file_name)
+    except PermissionError:
+        messagebox.askokcancel("ERROR", "The excel file is already open. Please close it and try again.")
     # Return the data_list as the output of this function
     return data_list
 
+logs = []
 def extra_options(data_list, index):
     string = ''
-    logs = []
     match = re.match(r"([A-D]\.) (.*)", data_list[index])
     if match:
         string = match.group(2)
     else:
-        print("WRONG FORMAT: ", data_list[index])
-        # messagebox.showerror(title='ERROR', message=str("WRONG FORMAT: ", data_list[index]))
-        Logs().check_file(logs)
+        logs.append(f"WRONG FORMAT: {data_list[index]}")
+        # Logs().check_file(f"Wrong format: {data_list[index]}")
     return string
+def check_format_op():
+    if len(logs) > 0:
+        print(logs)
 def extra_questions(data_list, index):
     string = ''
     match = re.match(r"(^\d+).\s+(.*)$", data_list[index])

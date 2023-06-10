@@ -3,8 +3,7 @@ from module.app.gui import QuizConverterGUI
 
 try:
     from ctypes import windll  # Only exists on Windows.
-
-    myappid = "com.minhtan.quizcoverter.1.0.0"
+    myappid = "com.minhtan.quizcoverter"
     windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 except ImportError:
     pass

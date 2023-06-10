@@ -12,8 +12,11 @@ class Logs():
 
     def check_file(self, logs):
         Logs().check_folder()
-        with open(self.file_path, "w") as f:
+        with open(self.file_path, "w", encoding="utf-8") as f:
+            f.write("\n".join(logs) + "\n")
+    def write_new_line(self, logs):
+        with open(self.file_path, "a", encoding="utf-8") as f:
             f.write("\n".join(logs) + "\n")
     def read(self):
-        with open(self.file_path, "r") as f:
+        with open(self.file_path, "r", encoding="utf-8") as f:
             return f.read()
