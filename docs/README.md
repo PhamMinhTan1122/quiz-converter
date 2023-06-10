@@ -75,12 +75,19 @@ You can own make file in excel or Google Sheets (if you use Google Sheets, you c
 
 ![alt text](https://raw.githubusercontent.com/PhamMinhTan1122/quizizz-convert/main/public/imgs/excel_before.png "Excel before")
 
-This will create an excel file that contains the quiz questions and their options in separate columns. The correct option will also be marked in column G. For example:
+This will automatically update an Excel file that you have selected above. The file contains the quiz questions and their options in separate columns. The correct option will also be marked in column G. For example:
 
 ![alt text](https://raw.githubusercontent.com/PhamMinhTan1122/quizizz-convert/main/public/imgs/excel_after.png "Excel after")
+
 After run and sucessful, You can then upload this excel file to Quizizz or any other online quiz platform that supports this format.
 # Use on Windows
 [Quiz Converter](https://github.com/PhamMinhTan1122/quiz-converter/releases)
+## Shortcuts
+
+- [Select excel (.xlsx) files](# "Select excel files" {Ctrl+E})
+- [Select document (.docx) files](# "Select document files" {Ctrl+D})
+- [Reset](# "Reset" {Ctrl+R})
+- [Convert](# "Convert" {Enter})
 
 ## TODO
 - [X] ~~Get answer format underline~~
