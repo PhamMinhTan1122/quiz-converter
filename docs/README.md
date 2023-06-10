@@ -38,7 +38,7 @@ To use Quiz Converter, you need to have a docx file that contains the quiz quest
 or the correct option can be table (**Don't have text before table!!!**). For example:
 
 ![alt text](https://raw.githubusercontent.com/PhamMinhTan1122/quiz-converter/main/public/imgs/answer-table.png "Answer-table")
-
+<!-- 
 Then, you need to run the main.py script from the scripts directory and provide the input and output filenames as arguments. For example:
 
 ```bash
@@ -61,7 +61,7 @@ If you do not have an answer table, you can use the following command to underli
 
 ```bash
 python main.py -d <your file docx (Word)> -x <your file xlsx (File SpreadSheets of Quizziz)> --no-answer-table
-```
+``` -->
 
 ### 🚨Noticed!
 
