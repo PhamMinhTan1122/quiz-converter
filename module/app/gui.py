@@ -4,11 +4,11 @@ from tkinter.scrolledtext import ScrolledText
 from utils import converter
 from module.logs import Logs
 import os
-
+import webbrowser
 class QuizConverterGUI:
     def __init__(self, master):
         self.master = master
-        self.master.title("Quiz Converter")
+        self.master.title("Quiz Converter by Pham Minh Tan")
         self.master.iconbitmap(os.path.join(os.path.dirname(__file__), "icons", "icon.ico"))
         # self.master.iconbitmap(os.path.join(os.path.dirname(__file__), "icon.ico"))
         # Create frames
@@ -16,7 +16,15 @@ class QuizConverterGUI:
         self.input_frame.grid(row=0, column=0, padx=10, pady=10, sticky="nsew")
         self.button_frame = tk.Frame(self.master)
         self.button_frame.grid(row=1, column=0, padx=10, pady=10, sticky="nsew")
-
+        # Link profile
+        self.link_you = tk.Label(self.master, text="Youtube", fg="blue", cursor="hand2")
+        self.link_you.grid(row=5, column=0, sticky="nsew" )
+        self.link_you.bind("<Button-1>", lambda e: self.open_browser(url="https://www.youtube.com/channel/UCXM_mZ8NYxuGvDAikcNei8w"))
+        self.link_red = tk.Label(self.master, text="Reddit", fg="blue", cursor="hand2")
+        self.link_red.grid(row=6, column=0, sticky="nsew" )
+        self.link_red.bind("<Button-1>", lambda e: self.open_browser(url="https://www.reddit.com/user/master_minh_tan"))
+        self.copyright = tk.Label(self.master, text="Power by Pham Minh Tan")
+        self.copyright.grid(row=7, column=0, sticky="nsew")
         # Create input widgets
         self.docx_label = tk.Label(self.input_frame, text="Select a docx file:")
         self.docx_entry = tk.Entry(self.input_frame)
@@ -112,3 +120,5 @@ class QuizConverterGUI:
         self.result_label.delete('1.0', tk.END)
         self.result_label.insert(tk.END, "No logs found.")
         self.result_label.config(state=tk.DISABLED)
+    def open_browser(sefl, url):
+        webbrowser.open_new_tab(url=url)
