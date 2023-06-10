@@ -115,7 +115,6 @@ def check_format_op():
     """
     Checks if the extra options are in the wrong format.
     """
-    print(logs)
     if len(logs) > 0:
         Logs().check_file(logs=logs)
         corr = ["Correct:  A. Something Not A.Something"]

@@ -22,7 +22,7 @@ class Logs:
             file_name: The name of the log file.
         """
         self.folder_path = folder_path
-        self.file_name = folder_path
+        self.file_name = file_name
         self.file_path = os.path.join(self.folder_path, self.file_name)
 
     def check_folder(self):
