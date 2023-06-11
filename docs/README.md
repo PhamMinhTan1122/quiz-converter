@@ -81,6 +81,7 @@ This will automatically update an Excel file that you have selected above. The f
 
 After run and sucessful, You can then upload this excel file to Quizizz or any other online quiz platform that supports this format.
 # Use on Windows
+Download here:
 [Quiz Converter](https://github.com/PhamMinhTan1122/quiz-converter/releases)
 ## Shortcuts
 
