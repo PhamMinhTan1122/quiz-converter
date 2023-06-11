@@ -105,7 +105,7 @@ To convert the selected files, press `Enter`.
 - [X] ~~Get answer format table~~
 
 ## License
-Quiz Converter is licensed under the MIT License. See [LICENSE.txt](https://raw.githubusercontent.com/PhamMinhTan1122/quizizz-convert/main/docs/LICENSE.txt) for more details.
+Quiz Converter is licensed under the MIT License. See [LICENSE](https://raw.githubusercontent.com/PhamMinhTan1122/quiz-converter/main/docs/LICENSE) for more details.
 
 ## Contributing
 Quiz Converter is an open source project and welcomes contributions from anyone. If you want to contribute to this project, please follow these steps:
