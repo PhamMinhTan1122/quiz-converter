@@ -63,9 +63,10 @@ def write_to_excel(data_list, excel_filename):
             row += 1
 
         else:
-            check_format_op()
+            pass
             # messagebox.showerror(title='ERROR', message=str(f"Invalid data format at index {i}"))
-            
+
+    check_format_op()
     # Save the workbook as an Excel file with the given filename
     wb.save(excel_filename)
     return row
