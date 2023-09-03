@@ -5,7 +5,7 @@ from utils import converter
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog="main.py")
     parser.add_argument("-d", "--docx", help="filename.docx path(s)")
-    parser.add_argument("-x", "--xlsx", default="./QuizizzSampleSpreadsheetUpdated.xlsx", help="filename.xlsx path(s)")
+    parser.add_argument("-x", "--xlsx", default="./template.xlsx", help="filename.xlsx path(s)")
     parser.add_argument("--answer-table", default=False, action=argparse.BooleanOptionalAction, help="--annswer-table if your file has answer table format")
     args = parser.parse_args()
     # Check input user

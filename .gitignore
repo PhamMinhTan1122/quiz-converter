@@ -1,4 +1,3 @@
 tests/
 *.docx
-*xlsx
 __pycache__
