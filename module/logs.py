@@ -32,7 +32,7 @@ class Logs:
         if not os.path.exists(self.folder_path):
             os.makedirs(self.folder_path)
 
-    def check_file(self, logs):
+    def check_file(self):
         """
         Writes the logs to the file.
 
@@ -40,8 +40,9 @@ class Logs:
             logs: A list of strings to be written to the file.
         """
         self.check_folder()
+        self.remove()
         with open(self.file_path, "w", encoding="utf-8") as f:
-            f.write("\n".join(logs) + "\n")
+            f.close()
 
     def write_new_line(self, logs):
         """
@@ -50,6 +51,8 @@ class Logs:
         Args:
             logs: A list of strings to be appended to the file.
         """
+        # self.remove()
+        # self.check_folder()
         with open(self.file_path, "a", encoding="utf-8") as f:
             f.write("\n".join(logs) + "\n")
 
@@ -62,3 +65,11 @@ class Logs:
         """
         with open(self.file_path, "r", encoding="utf-8") as f:
             return f.read()
+    def remove(self):
+        """
+        Remove the log files
+        """
+        log_files = os.listdir(self.folder_path)
+        for file in log_files:
+            if file.endswith(".txt"):
+                os.remove(os.path.join(self.folder_path, file))

@@ -28,7 +28,7 @@ class QuizConverterGUI:
 
         # Set the window icon.
         self.master.iconbitmap(os.path.join(os.path.dirname(__file__), "icons", "icon.ico"))
-
+        # print(os.path.join(os.path.dirname(__file__), "icons", "icon.ico"))
         # Create frames
         self.input_frame = Frame(self.master)
         self.input_frame.grid(row=0, column=0, padx=10, pady=10, sticky="nsew")
@@ -186,16 +186,16 @@ class QuizConverterGUI:
 
     def reset(self, event):
         """
-        Reset the file paths to empty strings.
+        reset the file paths to empty strings.
 
-        Args:
-            event: The event that triggered the function.
+        args:
+            event: the event that triggered the function.
         """
-        self.docx_entry.delete(0, END)
+        self.docx_entry.delete(0,END)
         self.xlsx_entry.delete(0, END)
         self.result_label.config(state=NORMAL)
-        self.result_label.delete('1.0', END)
-        self.result_label.insert(END, "No logs found.")
+        self.result_label.delete('1.0',END)
+        self.result_label.insert(END, "no logs found.")
         self.result_label.config(state=DISABLED)
 
     def open_browser(sefl, url):

@@ -54,6 +54,7 @@ def write_to_excel(data_list, excel_filename):
         if len(data_list) >= i + 4:
             # Write the question and its options to the worksheet cells
             ws[f"A{row}"] = extra_questions(data_list, i) # The question
+            ws[f"B{row}"] = "Multiple Choice"
             ws[f"C{row}"] = extra_options(data_list, i + 1)# Option A
             ws[f"D{row}"] = extra_options(data_list, i + 2) # Option B
             ws[f"E{row}"] = extra_options(data_list, i + 3) # Option C

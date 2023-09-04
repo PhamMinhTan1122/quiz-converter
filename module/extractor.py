@@ -106,19 +106,22 @@ def extra_options(data_list, index):
     match = re.match(r"([A-D]\.) (.*)", data_list[index])
     if match:
         string = match.group(2)
-    else:
-        logs.append(f"WRONG FORMAT: {data_list[index]}")
+    else:  
+        suggestion = re.sub(r"([A-D])\. *", r"\1. ", data_list[index])
+        match = re.match(r"([A-D])\. (.*)", suggestion)
+        if match:
+            string = match.group(2)
+        logs.append(f"WRONG FORMAT: {data_list[index]}\nPLEASE FIX: {data_list[index]} to {suggestion} in your docx file")
     return string
-
 
 def check_format_op():
     """
     Checks if the extra options are in the wrong format.
     """
-    if len(logs) > 0:
-        Logs().check_file(logs=logs)
-        corr = ["Correct:  A. Something Not A.Something"]
-        Logs().write_new_line(logs=corr)
+    if len(logs) >0:
+        Logs().check_file()
+        Logs().write_new_line(logs=logs)
+        logs.clear()
 
 
 def extra_questions(data_list, index):
