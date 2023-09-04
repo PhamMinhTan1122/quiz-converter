@@ -43,7 +43,6 @@ def extract_data(docx_filename, excel_file_name, answer_table: bool):
     wb.save(excel_file_name)
     # Return the data_list as the output of this function
     return data_list
-
 def extra_options(data_list, index):
     string = ''
     match = re.match(r"([A-D]\.) (.*)", data_list[index])
@@ -51,6 +50,8 @@ def extra_options(data_list, index):
         string = match.group(2)
     else:
         print("WRONG FORMAT: ", data_list[index])
+        suggestion = re.sub(r"([A-D])\. *", r"\1. ", data_list[index])
+        print("PLEASE FIX:", data_list[index], "to", suggestion, "in your docx file")
     return string
 def extra_questions(data_list, index):
     string = ''
