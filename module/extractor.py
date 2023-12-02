@@ -1,62 +1,71 @@
-# This module contains a function to extract data from a docx file
 import docx
 import re
 import openpyxl
-def extract_data(docx_filename, excel_file_name, answer_table: bool):
-    # Create a document object from the docx file
+
+def EXTRACT_DATA(docx_filename, excel_file_name, answer_table: bool, is_underline: bool, is_italic: bool):
     doc = docx.Document(docx_filename)
-    wb = openpyxl.Workbook()
     wb = openpyxl.load_workbook(excel_file_name)
     ws = wb.active
-    # Initialize an empty list to store the extracted data
-    data = []
-    # Loop through the paragraphs in the document and append their text to the list
-    for para in doc.paragraphs:
-        text = para.text.strip()
-        data.append(text)
-    # List convert A B C D to number
-    answer_index = {"A": 1, "B": 2, "C": 3, "D": 4}
-    
-    if answer_table:
-        # print(answer_table)
-        table = doc.tables[0]
-        # print(table)
-        values = []
-        for row in table.rows:
-            values.append([cell.text for cell in row.cells])
-        # Print the values of the table
-        for row, items in enumerate(values):
-            ws[f"G{int(items[0]) + 2}"] = answer_index[items[1]]
-    else:
-        match = re.match(r"(^\d+).\s+(.*)$", text)
-        if match:
-            row = int(match.group(1)) + 2
-        for run in para.runs:
-            if run.underline and r"[A-D]\. .*":
-                clean_data_ans = str(run.text).replace(".", "")
-                ws[f"G{row}"] = answer_index[clean_data_ans]
-    # Join the list into a single string and assign it to the data variable
-    data = "\n\n".join(data)
 
-    # Split the data by double newline characters and assign it to the data_list variable
-    data_list = data.split("\n\n")
+    DATA = []
+    ANSWER_INDEX = {"A": 1, "B": 2, "C": 3, "D": 4}
+    NUM_QUEST = 0
+    ROW = 1
+
+    def PROCESS_TEXT(para):
+        nonlocal ROW, NUM_QUEST
+        text = para.text.strip()
+        DATA.append(text)
+
+        # Process data-raw
+        if re.match(r"(?<!\b[A-D]\.\s)(?<!-\W)\b(?:Câu\s*)?(\d+)[.:]", text):
+            NUM_QUEST += 1
+            replace_quest = re.sub(r"(?<!\b[A-D]\.\s)(?<!-\W)\b(?:Câu\s*)?(\d+)[.:]", f"Câu {NUM_QUEST}.", text)
+            para.text = replace_quest
+        match = re.match(r"Câu (\d+)[.:]\s+(.*)$", text)
+        if match:
+            ROW = int(match.group(1)) + 2
+       
+        for run in para.runs:
+                if (is_underline and run.underline) or (is_italic and run.italic):
+                    clean_data_ans = run.text.replace(".", "").strip()
+                    if re.match(r"[A-D]", clean_data_ans):
+                        ws[f'G{ROW}'] = ANSWER_INDEX.get(clean_data_ans[0], None)
+
+
+    for para in doc.paragraphs:
+        PROCESS_TEXT(para)
+    doc.save(docx_filename)
+    if answer_table:
+        table = doc.tables[0]
+        values = [[cell.text.strip() for cell in row.cells] for row in table.rows]
+
+        for row, items in enumerate(values):
+            for cell_value in items:
+                if "-" in cell_value:
+                    number, word = cell_value.split('-')
+                else:
+                    continue
+
+                number = int(number.strip())
+                word = word.strip()
+                ws[f'G{number + 2}'] = ANSWER_INDEX.get(word, None)
+
+    data = "\n\n".join(DATA)
+    DATA_LIST = data.split("\n\n")
     wb.save(excel_file_name)
-    # Return the data_list as the output of this function
-    return data_list
-def extra_options(data_list, index):
-    string = ''
-    match = re.match(r"([A-D]\.) (.*)", data_list[index])
+    return DATA_LIST
+
+def EXTRA_OPTIONS(DATA_LIST, index):
+    match = re.match(r"([A-D]\.) (.*)", DATA_LIST[index])
     if match:
-        string = match.group(2)
+        return match.group(2)
     else:
-        print("WRONG FORMAT: ", data_list[index])
-        suggestion = re.sub(r"([A-D])\. *", r"\1. ", data_list[index])
-        print("PLEASE FIX:", data_list[index], "to", suggestion, "in your docx file")
-    return string
-def extra_questions(data_list, index):
-    string = ''
-    match = re.match(r"(^\d+).\s+(.*)$", data_list[index])
+        suggestion = re.sub(r"([A-D])\. *", r"\1. ", DATA_LIST[index])
+        return suggestion
+
+def EXTRA_QUESTIONS(DATA_LIST, index):
+    match = re.match(r"Câu (\d+)[.:]\s+(.*)", DATA_LIST[index])
     if match:
-        # index_question = int(match.group(1))
-        string = match.group(2)
-    return string
+        return match.group(2)
+    return ''

@@ -1,0 +1,41 @@
+```
+#QUIZ-CONVERTER
+## file_word
+###<nơi chứa các thư mục tài liệu (docx)>
+## module
+### empty_cell.py
+### extrator.py
+### write_new_file.py
+### writte.py 
+## others
+### sque2table.py
+### vertical2horizinal.py
+## output
+### <nơi chữa các thư mục sau khi chuyển đổi>
+##u tils
+### converter.py
+## main.py
+```
+
+
+
+
+```
+.
+└── QUIZ-CONVERTER
+    ├── file_word
+    │   └── <nơi chứa các thư mục tài liệu (docx)>
+    ├── module
+    │   ├── empty_cell.py
+    │   ├── extrator.py
+    │   ├── write_new_file.py
+    │   └── writte.py
+    ├── others
+    │   ├── sque2table.py
+    │   └── vertical2horizinal.py
+    ├── output
+    │   └── <nơi chữa các thư mục sau khi chuyển đổi>
+    ├── utils
+    │   └── converter.py
+    └── main.py
+```
